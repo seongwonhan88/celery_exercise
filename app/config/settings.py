@@ -23,6 +23,9 @@ SECRET_DIR = os.path.join(ROOT_DIR, '.secrets')
 # SECURITY WARNING: keep the secret key used in production secret!
 secret = json.load(open(os.path.join(SECRET_DIR, 'secrets.json')))
 SECRET_KEY = secret['SECRET_KEY']
+session = json.load(open(os.path.join(SECRET_DIR, 'login.json')))
+SESSION_KEY = session['session_key']
+SESSION_PASSWORD = session['session_password']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
