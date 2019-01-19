@@ -26,6 +26,8 @@ SECRET_KEY = secret['SECRET_KEY']
 session = json.load(open(os.path.join(SECRET_DIR, 'login.json')))
 SESSION_KEY = session['session_key']
 SESSION_PASSWORD = session['session_password']
+INSTAGRAM_KEY = session['instagram_key']
+INSTAGRAM_PASSWORD = session['instagram_password']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
