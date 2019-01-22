@@ -24,6 +24,8 @@ SECRET_DIR = os.path.join(ROOT_DIR, '.secrets')
 secret = json.load(open(os.path.join(SECRET_DIR, 'secrets.json')))
 SECRET_KEY = secret['SECRET_KEY']
 session = json.load(open(os.path.join(SECRET_DIR, 'login.json')))
+google_key = json.load(open(os.path.join(SECRET_DIR, 'google_key.json')))
+
 SESSION_KEY = session['session_key']
 SESSION_PASSWORD = session['session_password']
 INSTAGRAM_KEY = session['instagram_key']
