@@ -1,14 +1,13 @@
-from selenium import webdriver
-from bs4 import BeautifulSoup
+import requests
 
-driver = webdriver.Chrome('/Users/seongwon/Downloads/chromedriver')
-driver.implicitly_wait(3)
-driver.get('https://www.google.com')
+from config.settings import google_key
 
-driver.find_element_by_xpath('//*[@id="tsf"]/div[2]/div/div[1]/div/div[1]/input').send_keys('cafe')
-driver.implicitly_wait(5)
-driver.find_element_by_xpath('//*[@id="rso"]/div[1]/div/div/div[2]/div/div[4]/div[2]/div/div/a').click()
+places = requests.get(f'https://maps.googleapis.com/maps/api/place/nearbysearch/json'
+                f'?location=-33.8670522,151.1957362'
+                f'&radius=500'
+                f'&types=food'
+                f'&name=harbour'
+                f'&key={google_key["google_api_key"]}')
 
-html = driver.page_source
-soup = BeautifulSoup(html, 'html.parser')
-
+if places.status_code == 200:
+    print(places.text)
