@@ -5,7 +5,7 @@ bs4==0.0.1
 celery==4.2.1
 certifi==2018.11.29
 chardet==3.0.4
-Django==2.1.5
+Django==2.2.24
 idna==2.8
 kombu==4.2.2.post1
 Pillow==5.4.1
